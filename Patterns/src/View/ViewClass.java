@@ -5,25 +5,25 @@ import java.util.Scanner;
 import Calculate.Interface.iGetview;
 
 public class ViewClass implements iGetview {
-
+private boolean exit = true;
     @Override
     public String getInputNumOne() {
-        System.out.println("\nВведите первое число");
-        return "";
+        return "Введите первое число";
     }
 
     @Override
     public String prompt(String msg) {
         System.out.println(msg);
         Scanner in = new Scanner(System.in);
+        if (!exit) {
+            in.close();
+        }
         return in.nextLine();
     }
 
     @Override
     public String getCommandSign() {
-        System.out.println("Какое действие вы хотите совершить:");
-        System.out.println("Сложить: +\nВычесть: -\nУмножить: *\nДелить: /\n");
-        return "";
+        return "Какое действие вы хотите совершить:\nСложить: +\nВычесть: -\nУмножить: *\nДелить: /";
     }
 
     @Override
@@ -38,8 +38,7 @@ public class ViewClass implements iGetview {
 
     @Override
     public String getInputNumTwo() {
-        System.out.println("Введите второе число");
-        return "";
+        return "Введите второе число";
     }
 
     @Override

@@ -136,7 +136,7 @@ public class CalculateClass {
                     recordingActions.recordStr("Выбрана команда 3\n" + view.exitMsg());
                     System.out.println(view.exitMsg());
                     inter = false;
-                    continue;
+                    break;
                 default:
                     recordingActions.recordStr(view.errorMsg());
                     System.out.println(view.errorMsg());
